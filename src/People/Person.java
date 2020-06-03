@@ -1,12 +1,16 @@
 package People;
 
 public abstract class Person {
+    private int idPerson;
+    private static int idP = 0;
     private String name;
     private String surname;
     private String position;
     private int salary;
 
     public Person(String name, String surname, String position, int salary){
+        this.idPerson = idP;
+        idP++;
         this.name = name;
         this.surname = surname;
         this.position = position;
