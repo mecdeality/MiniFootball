@@ -10,7 +10,7 @@ public class Player extends Person{
 
 
     public Player(PlayerBuilder p) {
-        super(p.name, p.surname, p.position, p.salary);
+        super(p.name, p.surname, p.salary);
         this.attack = p.attack;
         this.defence = p.defence;
         this.isForward = p.isForward;
@@ -57,10 +57,9 @@ public class Player extends Person{
         private boolean isDefender;
         private boolean isGoalkeeper;
 
-        public PlayerBuilder(String name, String surname, String position, int salary, int defence, int attack){
+        public PlayerBuilder(String name, String surname, int salary, int defence, int attack){
             this.name = name;
             this.surname = surname;
-            this.position = position;
             this.salary = salary;
             this.defence = defence;
             this.attack = attack;

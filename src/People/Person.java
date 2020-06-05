@@ -5,20 +5,14 @@ public abstract class Person {
     private static int idP = 0;
     private String name;
     private String surname;
-    private String position;
     private int salary;
 
-    public Person(String name, String surname, String position, int salary){
+    public Person(String name, String surname, int salary){
         this.idPerson = idP;
         idP++;
         this.name = name;
         this.surname = surname;
-        this.position = position;
         this.salary = salary;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
 
     public void setSurname(String surname) {
@@ -39,10 +33,6 @@ public abstract class Person {
 
     public String getSurname() {
         return surname;
-    }
-
-    public String getPosition() {
-        return position;
     }
 
     public int getSalary() {
