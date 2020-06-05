@@ -40,6 +40,10 @@ public class Team {
         director.subsBudget();
     }
 
+    public void addBudget(){
+        budget+=500;
+    }
+
     private String getPlayers() {
         String str="";
         for (Player player: players) {
