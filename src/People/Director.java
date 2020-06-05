@@ -3,12 +3,12 @@ package People;
 public class Director extends Person {
     private int budget;
 
-    public Director(String name, String surname, int salary, int budget) {
+    public Director(String name, String surname, int salary) {
         super(name, surname, salary);
-        this.budget = budget;
+        this.budget = 5000;
     }
 
-    public int getBudget(){
+    public int subsBudget(){
         if(budget < 300){
             budget -= 300;
             return 300;
