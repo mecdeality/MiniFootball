@@ -17,6 +17,35 @@ public class Player extends Person{
         this.isDefender = p.isDefender;
         this.isGoalkeeper = p.isGoalkeeper;
     }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
+    public boolean isGoalkeeper() {
+        return isGoalkeeper;
+    }
+
+    public boolean isDefender() {
+        return isDefender;
+    }
+
+    public boolean isForward() {
+        return isForward;
+    }
+
     public static class PlayerBuilder{
         private String name;
         private String surname;
