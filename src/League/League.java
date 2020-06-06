@@ -28,6 +28,19 @@ public class League{
         }
         return q;
     }
+    public ArrayList<Team> getTeamArray(){
+        return teams;
+    }
+
+    public void deleteTeam(String name){
+        for(Team t : teams){
+            if(t.getName().equalsIgnoreCase(name)){
+                teams.remove(t);
+                System.out.println("Team \"" + name + "\" removed. ");
+                return;
+            }
+        }System.out.println("There is no such team in league. ");
+    }
 
     public void setName(String name) {
         this.name = name;
