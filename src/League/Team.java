@@ -24,7 +24,7 @@ public class Team {
     }
 
     public String getTeamInfo(){
-        return getName() + "\n" + getPlayers() + Integer.toString(getBudget());
+        return getName() + "\n" + getPlayers() + Integer.toString(getBudget())+"\n"+director.getName()+director.getSurname()+"\n"+coach.getName()+coach.getSurname();
     }
 
     public String getName() {
@@ -47,7 +47,7 @@ public class Team {
     private String getPlayers() {
         String str="";
         for (Player player: players) {
-            str+=player.getName()+"\n";
+            str+=player.getName()+player.getSurname()+"\n";
         }
         return str;
     }
