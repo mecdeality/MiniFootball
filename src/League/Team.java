@@ -52,10 +52,6 @@ public class Team {
         return str;
     }
 
-    public void setPlayers(ArrayList<Player> players) {
-        this.players = players;
-    }
-
     public boolean isInLeague() {
         return inLeague;
     }
@@ -63,4 +59,16 @@ public class Team {
     public void setInLeague(boolean inLeague) {
         this.inLeague = inLeague;
     }
+
+    public void addPlayer(Player player){
+        players.add(player);
+    }
+
+    public boolean isFull(){
+        if(players.size()>=5){
+            return true;
+        }
+        else return false;
+    }
+
 }

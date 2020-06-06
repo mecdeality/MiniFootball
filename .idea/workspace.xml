@@ -19,7 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62c46f2d-c2a0-4ae2-aded-84b0dda6748a" name="Default Changelist" comment="main commands for League and Team">
+    <list default="true" id="62c46f2d-c2a0-4ae2-aded-84b0dda6748a" name="Default Changelist" comment="addBudget() was added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/League/League.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/League/League.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/League/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/League/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +80,7 @@
       <workItem from="1591040943340" duration="351000" />
       <workItem from="1591088292826" duration="927000" />
       <workItem from="1591199245418" duration="3732000" />
-      <workItem from="1591350495980" duration="11201000" />
+      <workItem from="1591350495980" duration="15781000" />
     </task>
     <task id="LOCAL-00001" summary="edited Readme">
       <created>1591350708091</created>
@@ -122,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591391459352</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="addBudget() was added">
+      <created>1591391579306</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591391579306</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +155,8 @@
     <MESSAGE value="added new package League" />
     <MESSAGE value="added new class Team" />
     <MESSAGE value="main commands for League and Team" />
-    <option name="LAST_COMMIT_MESSAGE" value="main commands for League and Team" />
+    <MESSAGE value="addBudget() was added" />
+    <option name="LAST_COMMIT_MESSAGE" value="addBudget() was added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1591389103419">
@@ -173,10 +183,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1591041293854" />
-    <state x="688" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591391474201">
+    <state x="688" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591391601419">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="688" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591391474201" />
+    <state x="688" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591391601419" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1591199891735">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

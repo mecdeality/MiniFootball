@@ -16,11 +16,11 @@ public class League{
         return getName()+"\n"+getTeams();
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
-    private String getTeams() {
+    public  String getTeams() {
         String q="";
         for (Team team:teams) {
             q+=team.getName();
@@ -36,22 +36,27 @@ public class League{
 
     public void addTeam(Team team) {
         boolean q=false;
-        if(checkTeam()){
+        if(canJoin(team)){
 
-            if(!team.isInLeague()){
-                this.teams.add(team);
-                team.setInLeague(true);
+            if(checkTeam()){
+
+                if(!team.isInLeague()){
+                    this.teams.add(team);
+                    team.setInLeague(true);
+                }
+
+                else {
+                    System.out.println("This team is already participating in another league.");
+                }
+                q=true;
+
             }
-
-            else {
-                System.out.println("This team is already participating in another league.");
+            if(!q){
+                System.out.println("You can't add any team to this league. It is already full.");
             }
-            q=true;
+        }
+        else System.out.println("Team can not join to the league because there are not enough players.");
 
-        }
-        if(!q){
-            System.out.println("You can't add any team to this league. It is already full.");
-        }
     }
 
     private boolean checkTeam(){
@@ -59,6 +64,13 @@ public class League{
             return false;
         }
         else return true;
+    }
+
+    private boolean canJoin(Team team){
+        if(team.isFull()){
+            return true;
+        }
+        else return false;
     }
 
 }
