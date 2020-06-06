@@ -5,7 +5,12 @@ import League.Team;
 import People.Coach;
 import People.Director;
 import People.Player;
+import config.Database;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,7 +18,21 @@ public abstract class Menu {
     private static Scanner input = new Scanner(System.in);
     private static ArrayList<Team> teams = new ArrayList<Team>();
     private static ArrayList<Player> players = new ArrayList<Player>();
-    public static void displayAdminMenu(){
+    private static Connection con = Database.getConnection();
+    private static Statement stmt;
+
+    private static int lid;
+    private static int tid;
+
+    static {
+        try {
+            stmt = con.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void displayAdminMenu() throws SQLException {
         int n = 0;
         try{
             System.out.println("Menu: ");
@@ -39,20 +58,27 @@ public abstract class Menu {
         System.out.println("You're logged as an user");
     }
 
-    private static void addLeague(){
+    private static void addLeague() throws SQLException {
+        String name = "";
         League l = null;
         try{
             System.out.println("The name of the league: ");
-            String name = input.next() + input.nextLine();
+            name = input.next() + input.nextLine();
             l = new League(name);
         }catch (Exception e){
             System.out.println("Error!");
         }
+
+        stmt.executeUpdate("INSERT INTO leagues (name) VALUES (\""+ name +"\")");
+        ResultSet rs = stmt.executeQuery("SELECT id FROM leagues WHERE name = \""+ name+"\" ORDER BY id DESC LIMIT 1 ");
+        while(rs.next())
+            lid = rs.getInt(1);
+
         System.out.println("The league \""+ l.getName() +"\" is created, now let's create teams, and add them to this league. ");
         createTeams(l);
     }
 
-    private static void createTeams(League league){
+    private static void createTeams(League league) throws SQLException {
         System.out.println("Name of the team: ");
         String name = input.next() + input.nextLine();
         System.out.println("Football team must have one director, one coach and at least 5 players. Let's start creating with director.");
@@ -63,6 +89,8 @@ public abstract class Menu {
         System.out.println("Salary of the director: ");
         int dsalary = input.nextInt();
         Director director = new Director(dname, dsurname, dsalary);
+
+
         System.out.println("Now let's create a coach, Name of the coach: ");
         String cname = input.next() + input.nextLine();
         System.out.println("Surname of the coach: ");
@@ -73,6 +101,12 @@ public abstract class Menu {
         int cexp = input.nextInt();
         Coach coach = new Coach(cname, csurname, csalary, cexp);
         Team team = new Team(name, coach, director);
+
+        stmt.executeUpdate("INSERT INTO allteams (name, league_id) VALUES (\""+ name +"\", "+lid+")");
+        ResultSet rs = stmt.executeQuery("SELECT id FROM allteams WHERE name = \""+ name+"\" ORDER BY id DESC LIMIT 1 ");
+        while(rs.next())
+            tid = rs.getInt(1);
+
         System.out.println("Well! now let's create players!");
         boolean check = true;
         int c = 0;
@@ -132,7 +166,7 @@ public abstract class Menu {
         }
     }
 
-    private static void leagueMenu(League league){
+    private static void leagueMenu(League league) throws SQLException {
         int n = 0;
         try{
             System.out.println("League Menu: ");
@@ -167,23 +201,23 @@ public abstract class Menu {
         }
     }
 
-    private static void deleteTeam(League league){
+    private static void deleteTeam(League league) throws SQLException {
         System.out.println("Name of the team that you want to delete: ");
         String name = input.next() + input.nextLine();
         league.deleteTeam(name);
         leagueMenu(league);
     }
 
-    private static void showTeams(League league){
+    private static void showTeams(League league) throws SQLException {
         System.out.println(league.getTeams());
         leagueMenu(league);
     }
 
-    private static void playMatch(League league){
+    private static void playMatch(League league) throws SQLException {
         //in process
         leagueMenu(league);
     }
-    private static void showPlayers(League league){
+    private static void showPlayers(League league) throws SQLException {
         //in process
         leagueMenu(league);
     }
