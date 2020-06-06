@@ -3,37 +3,31 @@ package config;
 import java.sql.*;
 
 public class Database {
-    private static Database instance;
-    private  Connection con;
-    private String url = "jdbc:mysql://localhost:3306/db_name?useUnicode=true&serverTimezone=UTC";
-    private String user = "root";
-    private String password = "196422";
-    private Database(){
+    static Connection con=null;
+    public static Connection getConnection()
+    {
+        if (con != null) return con;
+        // get db, user, pass from settings file
+        return getConnection("javaoop", "root", "196422");
+    }
+
+    private static Connection getConnection(String db_name,String user_name,String password)
+    {
         try
         {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            this.con = DriverManager.getConnection(url, user, password);
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/"+db_name+"?useUnicode=true&serverTimezone=UTC", user_name, password);
         }
         catch(Exception e)
         {
             e.printStackTrace();
         }
-    }
-    public Connection getConnection() {
-        return con;
-    }
-    public static Connection getInstance() throws SQLException {
 
-        if (instance == null) {
-            instance = new Database();
-        } else if (instance.getConnection().isClosed()) {
-            instance = new Database();
-        }
-        return (Connection) instance;
+        return con;
     }
     public void query(String query){ // For select, we have to know about what we'll select, and we will return it in a ArrayList.
         try {
-            Statement stmt = getInstance().createStatement();
+            Statement stmt = getConnection().createStatement();
             stmt.executeUpdate(query);
         }
         catch (SQLException e ) {
@@ -41,6 +35,5 @@ public class Database {
             e.printStackTrace();
         }
     }
-
 }
 
