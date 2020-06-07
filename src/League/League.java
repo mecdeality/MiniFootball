@@ -73,7 +73,7 @@ public class League{
     }
 
     private boolean checkTeam(){
-        if(teams.size()==4){
+        if(teams.size()==2){
             return false;
         }
         else return true;
