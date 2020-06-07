@@ -61,8 +61,12 @@ public class Player extends Person{
             this.name = name;
             this.surname = surname;
             this.salary = salary;
-            this.defence = defence;
-            this.attack = attack;
+            if(defence > 100) this.defence = 100;
+            else if(defence < 1) this.defence = 1;
+            else this.defence = defence;
+            if(defence > 100) this.attack = 100;
+            else if(defence < 1) this.attack = 1;
+            else this.attack = defence;
         }
         public PlayerBuilder isForward(boolean a){
             this.isForward = a;
