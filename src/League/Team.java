@@ -47,7 +47,7 @@ public class Team {
     private String getPlayers() {
         String str="";
         for (Player player: players) {
-            str+=player.getName()+player.getSurname()+"\n";
+            str+=player.getName()+" "+player.getSurname()+"\n";
         }
         return str;
     }
