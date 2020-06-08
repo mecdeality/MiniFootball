@@ -52,8 +52,20 @@ public class Team {
         return str;
     }
 
-    public int getStats(){
-        //starting writing
+    public int getStatsa(){
+        int attack=0;
+        for(Player p: players){
+            attack+=p.getAttack();
+        }
+        return attack;
+    }
+
+    public int getStatsd(){
+        int defense = 0;
+        for(Player p: players){
+            defense+=p.getDefence();
+        }
+        return defense;
     }
 
     public boolean isInLeague() {
