@@ -44,12 +44,16 @@ public class Team {
         budget+=500;
     }
 
-    private String getPlayers() {
+    public String getPlayers() {
         String str="";
         for (Player player: players) {
             str+=player.getName()+" "+player.getSurname()+"\n";
         }
         return str;
+    }
+
+    public int getStats(){
+        //starting writing
     }
 
     public boolean isInLeague() {
