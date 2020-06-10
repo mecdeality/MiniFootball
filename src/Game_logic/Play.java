@@ -60,9 +60,13 @@ public class Play {
                  w=true;
                  str="\nTeam 2 wins";
              }
-             else {
+
+             else if(stat1>stat2){
                  t2.subsBudget();
                  t1.addBudget();
+             }
+             else {
+                 str="\n DRAW"
              }
 
              String q  =Integer.toString(stat1)+" "+Integer.toString(stat2);
