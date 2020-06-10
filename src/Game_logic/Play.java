@@ -6,10 +6,12 @@ public class Play {
 
     private double ts1;
     private double ts2;
+    private int stat1 = 0;
+    private int stat2 = 0;
 
     private int r1,r2;
 
-    public void Play(Team t1, Team t2){
+    public String Play(Team t1, Team t2){
              ts1+=t1.getStatsa()+t1.getStatsd();
              ts2+=t2.getStatsa()+t2.getStatsd();
              ts1/=100;
@@ -25,6 +27,7 @@ public class Play {
 
                  if(r1-r2>2){
                      team1g();
+                     stat1++;
                  }
 
                  else if(r1-r2==1){
@@ -33,6 +36,7 @@ public class Play {
 
                  else if(r2-r1>2){
                      team2g();
+                     stat2++;
                  }
 
                  else if(r2-r1==1){
@@ -45,7 +49,31 @@ public class Play {
                      else team2s();
                  }
 
+
+
              }
+             String str="\nTeam1 wins";
+             boolean w=false;
+             if(stat2>stat1){
+                 t1.subsBudget();
+                 t2.addBudget();
+                 w=true;
+                 str="\nTeam 2 wins";
+             }
+             else {
+                 t2.subsBudget();
+                 t1.addBudget();
+             }
+
+             String q  =Integer.toString(stat1)+" "+Integer.toString(stat2);
+
+             if(w){
+                 q+=str;
+             }
+             else q+=str;
+
+             return q;
+
     }
 
     public String strongT(double ts1, double ts2){
