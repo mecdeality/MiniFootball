@@ -4,14 +4,14 @@ import League.Team;
 
 public class Play {
 
-    private double ts1;
-    private double ts2;
-    private int stat1 = 0;
-    private int stat2 = 0;
+    private static double ts1;
+    private static double ts2;
+    private static int stat1 = 0;
+    private static int stat2 = 0;
 
-    private int r1,r2;
+    private static int r1,r2;
 
-    public String Play(Team t1, Team t2){
+    public static String Play(Team t1, Team t2){
 
              if(t1.isInLeague()&&t2.isInLeague()) {
 
@@ -57,7 +57,7 @@ public class Play {
                      t2.subsBudget();
                      t1.addBudget();
                  } else {
-                     str = "\n DRAW"
+                     str = "\n DRAW";
                  }
 
                  String q = Integer.toString(stat1) + " " + Integer.toString(stat2);
@@ -71,7 +71,7 @@ public class Play {
              else return "One of the team is not in League";
     }
 
-    public String strongT(double ts1, double ts2){
+    public static String strongT(double ts1, double ts2){
 
         int q1,q2;
 
@@ -104,31 +104,31 @@ public class Play {
         return q;
     }
 
-    private  String a1 = "Team1 makes an attack, he kicks... Ohhhh MY GOOD what a beautiful safe!!!";
-    private  String a2 = "Team2 makes an attack, he kicks... Ohhhh MY GOOD what a beautiful safe!!!";
-    private  String[] s1 = new String[] {"What an incredible goal.", "GOAL! GOAL! GOAL!", "And again GOOOAAAAAAAL!!! We are watching history dear friends."};
-    private  String[] st1 = new String[] {"Today team1 is on fire.", "It is definitely team1's day."};
-    private  String[] st2 = new String[] {"Today team2 is on fire.", "It is definitely team2's day."};
+    private  static String a1 = "Team1 makes an attack, he kicks... Ohhhh MY GOOD what a beautiful safe!!!";
+    private  static String a2 = "Team2 makes an attack, he kicks... Ohhhh MY GOOD what a beautiful safe!!!";
+    private  static String[] s1 = new String[] {"What an incredible goal.", "GOAL! GOAL! GOAL!", "And again GOOOAAAAAAAL!!! We are watching history dear friends."};
+    private  static String[] st1 = new String[] {"Today team1 is on fire.", "It is definitely team1's day."};
+    private  static String[] st2 = new String[] {"Today team2 is on fire.", "It is definitely team2's day."};
 
-    public String team1g(){
+    public static String team1g(){
         int g = (int) (Math.random() * 3);
         int g1 = (int) (Math.random() * 2);
         String q1 = s1[g];
         return q1+st1[g1];
     }
 
-    public String team2g(){
+    public static String team2g(){
         int g = (int) (Math.random() * 3);
         int g1 = (int) (Math.random() * 2);
         String q1 = s1[g];
         return q1+st2[g1];
     }
 
-    public String team1s(){
+    public static String team1s(){
         return a2;
     }
 
-    public String team2s(){
+    public static String team2s(){
         return a1;
     }
 
