@@ -12,72 +12,63 @@ public class Play {
     private int r1,r2;
 
     public String Play(Team t1, Team t2){
-             ts1+=t1.getStatsa()+t1.getStatsd();
-             ts2+=t2.getStatsa()+t2.getStatsd();
-             ts1/=100;
-             ts2/=100;
+
+             if(t1.isInLeague()&&t2.isInLeague()) {
+
+                 ts1 += t1.getStatsa() + t1.getStatsd();
+                 ts2 += t2.getStatsa() + t2.getStatsd();
+                 ts1 /= 100;
+                 ts2 /= 100;
 
 
-             for(int i = 0 ; i < 5; i++){
-                 String q = strongT(ts1,ts2);
-                 char c1=q.charAt(0),c2=q.charAt(2);
+                 for (int i = 0; i < 5; i++) {
+                     String q = strongT(ts1, ts2);
+                     char c1 = q.charAt(0), c2 = q.charAt(2);
 
-                 r1=Character.getNumericValue(c1);
-                 r2=Character.getNumericValue(c2);
+                     r1 = Character.getNumericValue(c1);
+                     r2 = Character.getNumericValue(c2);
 
-                 if(r1-r2>2){
-                     team1g();
-                     stat1++;
-                 }
-
-                 else if(r1-r2==1){
-                    team1s();
-                 }
-
-                 else if(r2-r1>2){
-                     team2g();
-                     stat2++;
-                 }
-
-                 else if(r2-r1==1){
-                     team2s();
-                 }
-                 else {
-                     if(1+(int)Math.random()*2==1){
+                     if (r1 - r2 > 2) {
+                         team1g();
+                         stat1++;
+                     } else if (r1 - r2 == 1) {
                          team1s();
+                     } else if (r2 - r1 > 2) {
+                         team2g();
+                         stat2++;
+                     } else if (r2 - r1 == 1) {
+                         team2s();
+                     } else {
+                         if (1 + (int) Math.random() * 2 == 1) {
+                             team1s();
+                         } else team2s();
                      }
-                     else team2s();
+
+
+                 }
+                 String str = "\nTeam1 wins";
+                 boolean w = false;
+                 if (stat2 > stat1) {
+                     t1.subsBudget();
+                     t2.addBudget();
+                     w = true;
+                     str = "\nTeam 2 wins";
+                 } else if (stat1 > stat2) {
+                     t2.subsBudget();
+                     t1.addBudget();
+                 } else {
+                     str = "\n DRAW"
                  }
 
+                 String q = Integer.toString(stat1) + " " + Integer.toString(stat2);
 
+                 if (w) {
+                     q += str;
+                 } else q += str;
 
+                 return q;
              }
-             String str="\nTeam1 wins";
-             boolean w=false;
-             if(stat2>stat1){
-                 t1.subsBudget();
-                 t2.addBudget();
-                 w=true;
-                 str="\nTeam 2 wins";
-             }
-
-             else if(stat1>stat2){
-                 t2.subsBudget();
-                 t1.addBudget();
-             }
-             else {
-                 str="\n DRAW"
-             }
-
-             String q  =Integer.toString(stat1)+" "+Integer.toString(stat2);
-
-             if(w){
-                 q+=str;
-             }
-             else q+=str;
-
-             return q;
-
+             else return "One of the team is not in League";
     }
 
     public String strongT(double ts1, double ts2){
