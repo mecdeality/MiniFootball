@@ -6,14 +6,15 @@ public class Play {
 
     private static double ts1;
     private static double ts2;
-    private static int stat1 = 0;
-    private static int stat2 = 0;
 
     private static int r1,r2;
 
     public static String Play(Team t1, Team t2){
 
              if(t1.isInLeague()&&t2.isInLeague()) {
+
+                 int stat1 = 0;
+                 int stat2 = 0;
 
                  ts1 += t1.getStatsa() + t1.getStatsd();
                  ts2 += t2.getStatsa() + t2.getStatsd();
@@ -23,7 +24,8 @@ public class Play {
 
                  for (int i = 0; i < 5; i++) {
                      String q = strongT(ts1, ts2);
-                     char c1 = q.charAt(0), c2 = q.charAt(2);
+                     char c1 = q.charAt(0);
+                     char c2 = q.charAt(2);
 
                      r1 = Character.getNumericValue(c1);
                      r2 = Character.getNumericValue(c2);
@@ -31,17 +33,29 @@ public class Play {
                      if (r1 - r2 > 2) {
                          team1g();
                          stat1++;
-                     } else if (r1 - r2 == 1) {
+                     }
+
+                     else if (r1 - r2 == 1) {
                          team1s();
-                     } else if (r2 - r1 > 2) {
+                     }
+
+                     else if (r2 - r1 > 2) {
                          team2g();
                          stat2++;
-                     } else if (r2 - r1 == 1) {
+                     }
+
+                     else if (r2 - r1 == 1) {
                          team2s();
-                     } else {
+                     }
+
+                     else {
+
                          if (1 + (int) Math.random() * 2 == 1) {
                              team1s();
-                         } else team2s();
+                         }
+
+                         else team2s();
+
                      }
 
 
