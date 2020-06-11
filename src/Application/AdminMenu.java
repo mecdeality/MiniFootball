@@ -14,7 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public abstract class Menu {
+public abstract class AdminMenu {
     private static Scanner input = new Scanner(System.in);
     private static ArrayList<Team> teams = new ArrayList<Team>();
     private static ArrayList<Player> players = new ArrayList<Player>();

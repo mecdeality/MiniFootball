@@ -14,4 +14,12 @@ public class Director extends Person {
             return 300;
         }return 0;
     }
+
+    public int getBudget(){
+        return budget;
+    }
+
+    public String toString(){
+        return "Name and Surname: " + this.getName()+" "+this.getSurname()+", Budget: "+this.budget +", Salary: "+this.getSalary();
+    }
 }

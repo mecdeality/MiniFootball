@@ -8,7 +8,6 @@ public class Player extends Person{
     private boolean isGoalkeeper;
 
 
-
     public Player(PlayerBuilder p) {
         super(p.name, p.surname, p.salary);
         this.attack = p.attack;
@@ -24,6 +23,12 @@ public class Player extends Person{
 
     public int getDefence() {
         return defence;
+    }
+
+    public String getPostition(){
+        if(isGoalkeeper) return "goalkeeper";
+        else if(isDefender) return "defender";
+        return "forward";
     }
 
     public void setAttack(int attack) {
@@ -44,6 +49,10 @@ public class Player extends Person{
 
     public boolean isForward() {
         return isForward;
+    }
+
+    public String toString(){
+        return "Name and Surname: " + this.getName()+" "+this.getSurname()+", Position: "+this.getPostition()+", Salary: "+this.getSalary()+", Defence: "+this.defence+", Attack: "+this.attack;
     }
 
     public static class PlayerBuilder{
