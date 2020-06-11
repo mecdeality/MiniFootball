@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="62c46f2d-c2a0-4ae2-aded-84b0dda6748a" name="Default Changelist" comment="some bugs are fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_logic/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_logic/Play.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/League/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/League/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +82,8 @@
       <workItem from="1591350495980" duration="34265000" />
       <workItem from="1591617877118" duration="4749000" />
       <workItem from="1591774111554" duration="4503000" />
-      <workItem from="1591806655201" duration="5830000" />
+      <workItem from="1591806655201" duration="7231000" />
+      <workItem from="1591902534678" duration="636000" />
     </task>
     <task id="LOCAL-00001" summary="edited Readme">
       <created>1591350708091</created>
@@ -196,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591814003892</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="some bugs are fixed">
+      <created>1591817497078</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1591817497078</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,10 +269,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1323" height="182" key="GridCell.Tab.0.right/0.0.1366.738/1366.0.1280.994@0.0.1366.738" timestamp="1591041293854" />
-    <state x="688" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591814011100">
+    <state x="688" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591817500920">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="688" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591814011100" />
+    <state x="688" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591817500920" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1591199891735">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

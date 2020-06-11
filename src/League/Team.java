@@ -11,6 +11,7 @@ public class Team {
     private Coach coach;
     private Director director;
     private int budget;
+    private int tsize;
     private ArrayList<Player> players;
     private boolean inLeague;
 
@@ -24,7 +25,7 @@ public class Team {
     }
 
     public String getTeamInfo(){
-        return getName() + "\n" + getPlayers() + Integer.toString(getBudget())+"\n"+director.getName()+director.getSurname()+"\n"+coach.getName()+coach.getSurname();
+        return getName() + " Budget:"+ Integer.toString(getBudget())+" playernumber:"+Integer.toString(tsize);
     }
 
     public String getName() {
@@ -78,6 +79,7 @@ public class Team {
 
     public void addPlayer(Player player){
         players.add(player);
+        tsize++;
     }
 
     public boolean isFull(){
