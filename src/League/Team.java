@@ -31,7 +31,7 @@ public class Team {
         return name;
     }
 
-    private int getBudget() {
+    public int getBudget() {
         return budget;
     }
 
