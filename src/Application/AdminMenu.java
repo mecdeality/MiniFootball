@@ -14,12 +14,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static Application.UserMenu.displayUserMenu;
+
+
 public abstract class AdminMenu {
     private static Scanner input = new Scanner(System.in);
     private static ArrayList<Team> teams = new ArrayList<Team>();
     private static ArrayList<Player> players = new ArrayList<Player>();
     private static Connection con = Database.getConnection();
     private static Statement stmt;
+    private static boolean trycatch;
 
     private static int lid;
     private static int tid;
@@ -34,28 +38,33 @@ public abstract class AdminMenu {
 
     public static void displayAdminMenu() throws SQLException {
         int n = 0;
-        try{
-            System.out.println("Menu: ");
-            System.out.println("Create new league (press 1)");
-            System.out.println("Show information about finished leagues (press 2)");
-            n = input.nextInt();
-        }catch (Exception e){
-            System.out.println("Error!");
-            displayAdminMenu();
-        }
+        do {
+            try {
+                trycatch = false;
+                System.out.println("Menu: ");
+                System.out.println("Create new league (press 1)");
+                System.out.println("Show information about finished leagues (press 2)");
+                n = input.nextInt();
+            } catch (Exception e) {
+                input.next();
+                trycatch = true;
+                System.out.println("Error!");
+            }
+        }while (trycatch == true);
         switch(n) {
             case 1 :
                 addLeague();
                 break;
             case 2 :
-                displayUserMenu();
+                UserMenu();
                 break;
             default:
                 System.out.println("Wrong Command!");
         }
     }
-    public static void displayUserMenu(){
+    public static void UserMenu() throws SQLException {
         System.out.println("You're logged as an user");
+        displayUserMenu();
     }
 
     private static void addLeague() throws SQLException {
@@ -102,10 +111,13 @@ public abstract class AdminMenu {
         Coach coach = new Coach(cname, csurname, csalary, cexp);
         Team team = new Team(name, coach, director);
 
-        stmt.executeUpdate("INSERT INTO allteams (name, league_id) VALUES (\""+ name +"\", "+lid+")");
+        stmt.executeUpdate("INSERT INTO allteams (name, budget, league_id) VALUES (\""+ name +"\", \""+team.getBudget()+"\", "+lid+")");
         ResultSet rs = stmt.executeQuery("SELECT id FROM allteams WHERE name = \""+ name+"\" ORDER BY id DESC LIMIT 1 ");
         while(rs.next())
             tid = rs.getInt(1);
+
+        stmt.executeUpdate("INSERT INTO alldirectors (name, surname, budget, salary, team_id) VALUES (\""+ director.getName() +"\", \""+director.getSurname()+"\", \""+director.getBudget()+"\", \""+director.getSalary()+"\", "+tid+")");
+        stmt.executeUpdate("INSERT INTO allcoaches (name, surname, exp, salary, team_id) VALUES (\""+ coach.getName() +"\", \""+coach.getSurname()+"\", \""+coach.getExperienceYear()+"\", \""+coach.getSalary()+"\", "+tid+")");
 
         System.out.println("Well! now let's create players!");
         boolean check = true;
@@ -144,6 +156,10 @@ public abstract class AdminMenu {
             }
             players.add(player);
             team.addPlayer(player);
+
+            stmt.executeUpdate("INSERT INTO allplayers (name, surname, position , salary, defence, attack,team_id) VALUES (\""+ player.getName() +"\", \""+player.getSurname()+"\", \""+player.getPostition()+"\", \""+player.getSalary()+"\", \""+player.getDefence()+"\", \""+player.getAttack()+"\", "+tid+")");
+            stmt.executeUpdate("UPDATE allteams SET players = players+1 WHERE id = "+tid);
+
             c++;
             if(c > 4){
                 System.out.println("Would you like to add more players?(Yes/No): ");
@@ -155,7 +171,7 @@ public abstract class AdminMenu {
         }
         teams.add(team);
         league.addTeam(team); // addTeam should return a boolean!
-
+        stmt.executeUpdate("UPDATE leagues SET teams = teams+1 WHERE id = "+lid);
 
         System.out.println("Would you like to create a team again?(Yes/No): ");
         String a = input.next() + input.nextLine();
@@ -171,10 +187,9 @@ public abstract class AdminMenu {
         try{
             System.out.println("League Menu: ");
             System.out.println("Add team (press 1)");
-            System.out.println("Delete team (press 2)");
-            System.out.println("Show all teams (press 3)");
-            System.out.println("Play match (press 4)");
-            System.out.println("Show all players of the league (press 5)");
+            System.out.println("Show all teams (press 2)");
+            System.out.println("Play match (press 3)");
+            System.out.println("Show all players of the league (press 4)");
             n = input.nextInt();
         }catch (Exception e){
             System.out.println("Error!");
@@ -185,27 +200,17 @@ public abstract class AdminMenu {
                 createTeams(league);
                 break;
             case 2 :
-                deleteTeam(league);
-                break;
-            case 3 :
                 showTeams(league);
                 break;
-            case 4 :
+            case 3 :
                 playMatch(league);
                 break;
-            case 5 :
+            case 4 :
                 showPlayers(league);
                 break;
             default:
                 System.out.println("Wrong Command!");
         }
-    }
-
-    private static void deleteTeam(League league) throws SQLException {
-        System.out.println("Name of the team that you want to delete: ");
-        String name = input.next() + input.nextLine();
-        league.deleteTeam(name);
-        leagueMenu(league);
     }
 
     private static void showTeams(League league) throws SQLException {
@@ -218,7 +223,19 @@ public abstract class AdminMenu {
         leagueMenu(league);
     }
     private static void showPlayers(League league) throws SQLException {
-        //in process
-        leagueMenu(league);
+        System.out.println("Write the team name that you want to see the players: ");
+        String name = input.next() + input.nextLine();
+        ArrayList<Team> teams = league.getTeamArray();
+        for(Team x : teams){
+            if(x.getName().equalsIgnoreCase(name)){
+                x.getPlayers();
+                leagueMenu(league);
+            }else{
+                System.out.println("Oops, wrong team name, please try again.");
+                showPlayers(league);
+            }
+        }
+//        t.getPlayers();
+//        leagueMenu(league);
     }
 }
