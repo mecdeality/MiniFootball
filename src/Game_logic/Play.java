@@ -36,7 +36,7 @@ public class Play {
                      }
 
                      else if (r2 - r1 >= 1) {
-                         team2g();
+                         System.out.println(team2g());
                          stat2++;
                      }
 
@@ -44,10 +44,10 @@ public class Play {
                      else {
 
                          if (1 + (int) Math.random() * 2 == 1) {
-                             team1s();
+                            System.out.println(team1s());
                          }
 
-                         else team2s();
+                         else System.out.println(team2s());
 
                      }
 
@@ -118,15 +118,15 @@ public class Play {
     public static String team1g(){
         int g = (int) (Math.random() * 3);
         int g1 = (int) (Math.random() * 2);
-        String q1 = s1[g];
-        return q1+st1[g1]+"\n";
+        String q1 = s1[g]+st1[g1]+"\n";
+        return q1;
     }
 
     public static String team2g(){
         int g = (int) (Math.random() * 3);
         int g1 = (int) (Math.random() * 2);
-        String q1 = s1[g];
-        return q1+st2[g1]+"\n";
+        String q1 = s1[g]+st2[g1]+"\n";
+        return q1;
     }
 
     public static String team1s(){
