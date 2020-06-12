@@ -61,24 +61,20 @@ public class Play {
 
                  }
                  String str = "\nTeam1 wins";
-                 boolean w = false;
                  if (stat2 > stat1) {
                      t1.subsBudget();
                      t2.addBudget();
-                     w = true;
                      str = "\nTeam 2 wins";
                  } else if (stat1 > stat2) {
                      t2.subsBudget();
                      t1.addBudget();
-                 } else {
+                 } else if(stat1==stat2) {
                      str = "\n DRAW";
                  }
 
                  String q = Integer.toString(stat1) + " " + Integer.toString(stat2);
 
-                 if (w) {
-                     q += str;
-                 } else q += str;
+                 q += str;
 
                  return q;
              }
@@ -114,7 +110,7 @@ public class Play {
                 q2=2 + (int) (Math.random()*3);
             }
         }
-        String q  =Integer.toString(r1)+" "+Integer.toString(r2);
+        String q  =Integer.toString(q1)+" "+Integer.toString(q2);
         return q;
     }
 
