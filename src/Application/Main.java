@@ -25,7 +25,7 @@ public class Main {
         }else{
             System.out.println("Invalid input.");
         }
-
+//
 //        Director director = new Director("dname", "dsurname", 78);
 //        Director director2 = new Director("dname", "dsurname", 78);
 //
@@ -37,7 +37,7 @@ public class Main {
 //        Player player = new Player.PlayerBuilder("pname", "psurname", 45, 45, 45)
 //                .isGoalkeeper(true)
 //                .build();
-//        Player player2 = new Player.PlayerBuilder("pname", "psurname", 45, 45, 45)
+//        Player player2 = new Player.PlayerBuilder("pname", "psurname", 45, 38, 17)
 //                .isDefender(true)
 //                .build();
 //        Player player3 = new Player.PlayerBuilder("pname", "psurname", 45, 45, 45)
@@ -46,7 +46,7 @@ public class Main {
 //        Player player4 = new Player.PlayerBuilder("pname", "psurname", 45, 45, 45)
 //                .isDefender(true)
 //                .build();
-//        Player player5 = new Player.PlayerBuilder("pname", "psurname", 45, 45, 45)
+//        Player player5 = new Player.PlayerBuilder("pname", "psurname", 45, 33, 10)
 //                .isDefender(true)
 //                .build();
 //
@@ -83,7 +83,7 @@ public class Main {
 //        l.addTeam(team);
 //        l.addTeam(team2);
 //
-////        System.out.println(Play.Play(team, team2));
+//        System.out.println(Play.Play(team, team2));
 //
 //        System.out.println(player);
 //        System.out.println(coach);

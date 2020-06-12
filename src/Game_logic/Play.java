@@ -18,8 +18,8 @@ public class Play {
 
                  ts1 += t1.getStatsa() + t1.getStatsd();
                  ts2 += t2.getStatsa() + t2.getStatsd();
-                 ts1 /= 100;
-                 ts2 /= 100;
+                 ts1 /= 50;
+                 ts2 /= 50;
 
 
                  for (int i = 0; i < 5; i++) {
@@ -30,23 +30,16 @@ public class Play {
                      r1 = Character.getNumericValue(c1);
                      r2 = Character.getNumericValue(c2);
 
-                     if (r1 - r2 > 2) {
+                     if (r1 - r2 >=1) {
                          team1g();
                          stat1++;
                      }
 
-                     else if (r1 - r2 == 1) {
-                         team1s();
-                     }
-
-                     else if (r2 - r1 > 2) {
+                     else if (r2 - r1 >= 1) {
                          team2g();
                          stat2++;
                      }
 
-                     else if (r2 - r1 == 1) {
-                         team2s();
-                     }
 
                      else {
 
@@ -60,6 +53,8 @@ public class Play {
 
 
                  }
+
+
                  String str = "\nTeam1 wins";
                  if (stat2 > stat1) {
                      t1.subsBudget();
@@ -87,9 +82,9 @@ public class Play {
 
         if(ts1>ts2){
 
-            if(ts1-ts2>2){
-                q1=4 + (int) (Math.random()*2);
-                q2=2 + (int) (Math.random()*3);
+            if(ts1-ts2>1){
+                q1=4 + (int) (Math.random()*4);
+                q2=2 + (int) (Math.random()*5);
             }
 
             else {
@@ -100,9 +95,9 @@ public class Play {
         }
 
         else{
-            if(ts2-ts1>2){
-                q2=4 + (int) (Math.random()*2);
-                q1=2 + (int) (Math.random()*3);
+            if(ts2-ts1>1){
+                q2=4 + (int) (Math.random()*4);
+                q1=2 + (int) (Math.random()*5);
             }
 
             else {
