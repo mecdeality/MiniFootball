@@ -19,8 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62c46f2d-c2a0-4ae2-aded-84b0dda6748a" name="Default Changelist" comment="some bugsare fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="62c46f2d-c2a0-4ae2-aded-84b0dda6748a" name="Default Changelist" comment="some bugs are fixed">
       <change beforePath="$PROJECT_DIR$/src/Game_logic/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_logic/Play.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +77,7 @@
       <workItem from="1591617877118" duration="4749000" />
       <workItem from="1591774111554" duration="4503000" />
       <workItem from="1591806655201" duration="7231000" />
-      <workItem from="1591902534678" duration="7298000" />
+      <workItem from="1591902534678" duration="7895000" />
     </task>
     <task id="LOCAL-00001" summary="edited Readme">
       <created>1591350708091</created>
@@ -248,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591946600409</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="some bugs are fixed">
+      <created>1591947528285</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1591947528285</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,14 +287,14 @@
     <MESSAGE value="new Class Commentator and new func in Play" />
     <MESSAGE value="Commentator.java was merged with play then deleted, completed and added funcs in PLAY" />
     <MESSAGE value="Play is ready!" />
-    <MESSAGE value="some bugs are fixed" />
     <MESSAGE value="Readme is added" />
     <MESSAGE value="idk" />
     <MESSAGE value="Now everything works" />
     <MESSAGE value="Readme" />
     <MESSAGE value="KAEFFFFFFFFFFF" />
     <MESSAGE value="some bugsare fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="some bugsare fixed" />
+    <MESSAGE value="some bugs are fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="some bugs are fixed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591945782519">
@@ -343,10 +349,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591906904130" />
-    <state x="688" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591946603837">
+    <state x="688" y="256" key="Vcs.Push.Dialog.v2" timestamp="1591947537192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="688" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591946603837" />
+    <state x="688" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591947537192" />
     <state x="379" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1591199891735">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

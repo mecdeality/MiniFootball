@@ -31,7 +31,7 @@ public class Play {
                      r2 = Character.getNumericValue(c2);
 
                      if (r1 - r2 >=1) {
-                         team1g();
+                         System.out.println(team1g());
                          stat1++;
                      }
 
