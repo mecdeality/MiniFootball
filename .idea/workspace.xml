@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62c46f2d-c2a0-4ae2-aded-84b0dda6748a" name="Default Changelist" comment="idk">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game_logic/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game_logic/Play.java" afterDir="false" />
+    <list default="true" id="62c46f2d-c2a0-4ae2-aded-84b0dda6748a" name="Default Changelist" comment="Now everything works">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +82,7 @@
       <workItem from="1591617877118" duration="4749000" />
       <workItem from="1591774111554" duration="4503000" />
       <workItem from="1591806655201" duration="7231000" />
-      <workItem from="1591902534678" duration="4105000" />
+      <workItem from="1591902534678" duration="4890000" />
     </task>
     <task id="LOCAL-00001" summary="edited Readme">
       <created>1591350708091</created>
@@ -225,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591943848196</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Now everything works">
+      <created>1591944139391</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1591944139391</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +267,8 @@
     <MESSAGE value="some bugs are fixed" />
     <MESSAGE value="Readme is added" />
     <MESSAGE value="idk" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk" />
+    <MESSAGE value="Now everything works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Now everything works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1591389103419">
