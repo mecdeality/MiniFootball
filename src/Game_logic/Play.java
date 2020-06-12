@@ -119,22 +119,22 @@ public class Play {
         int g = (int) (Math.random() * 3);
         int g1 = (int) (Math.random() * 2);
         String q1 = s1[g];
-        return q1+st1[g1];
+        return q1+st1[g1]+"\n";
     }
 
     public static String team2g(){
         int g = (int) (Math.random() * 3);
         int g1 = (int) (Math.random() * 2);
         String q1 = s1[g];
-        return q1+st2[g1];
+        return q1+st2[g1]+"\n";
     }
 
     public static String team1s(){
-        return a2;
+        return a2+"\n";
     }
 
     public static String team2s(){
-        return a1;
+        return a1+"\n";
     }
 
 
